@@ -26,10 +26,9 @@ function About({}: Props) {
                 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="flex-shrink"
             >
                 <Image
-                    className="mt-[350px] mb-20 h-56 w-56 flex-shrink-0 rounded-full object-cover md:mt-0 md:mb-0 md:h-96 md:w-64 md:rounded-lg xl:h-[600px] xl:w-[500px]"
+                    className="mt-[200px] mb-20 h-56 w-56 flex-shrink-0 rounded-full object-cover md:mt-0 md:mb-0 md:h-96 md:w-64 md:rounded-lg xl:h-[600px] xl:w-[500px]"
                     src={woods}
                     alt={"Profile Picture"}
                 ></Image>
