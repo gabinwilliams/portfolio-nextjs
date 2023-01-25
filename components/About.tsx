@@ -11,9 +11,9 @@ function About({}: Props) {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
-            className="flex flex-col relative h-screen text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center"
+            className="relative mx-auto flex h-screen max-w-7xl flex-col items-center justify-evenly px-10 text-center md:flex-row md:text-left"
         >
-            <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
+            <h3 className="absolute top-24 text-2xl uppercase tracking-[20px] text-gray-500">
                 About
             </h3>
             <motion.div
@@ -29,7 +29,7 @@ function About({}: Props) {
                 className="flex-shrink"
             >
                 <Image
-                    className="mt-[350px] md:mt-0 mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-96 xl:h-[600px] xl:w-[500px]"
+                    className="mt-[350px] mb-20 h-56 w-56 flex-shrink-0 rounded-full object-cover md:mt-0 md:mb-0 md:h-96 md:w-64 md:rounded-lg xl:h-[600px] xl:w-[500px]"
                     src={woods}
                     alt={"Profile Picture"}
                 ></Image>
@@ -42,7 +42,7 @@ function About({}: Props) {
                     </span>{" "}
                     background:
                 </h4>
-                <div className="xl:w-[600px] md:w-[400px]">
+                <div className="md:w-[400px] xl:w-[600px]">
                     <p className="text-base">
                         I&apos;m a lifelong learner with a strong urge to solve
                         problems with creative solutions. Software development

@@ -18,17 +18,17 @@ function Hero({}: Props) {
         delaySpeed: 2000,
     });
     return (
-        <motion.div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
+        <motion.div className="flex h-screen flex-col items-center justify-center space-y-8 overflow-hidden text-center">
             <Image
-                className="relative rounded-full h-44 w-44 mx-auto object-cover"
+                className="relative mx-auto h-44 w-44 rounded-full object-cover"
                 src={water}
                 alt={"profile image"}
             ></Image>
             <div className="z-20">
-                <h2 className="text-md uppercase text-gray-500 pb-2 tracking-[10px]">
+                <h2 className="text-md pb-2 uppercase tracking-[10px] text-gray-500">
                     Software Engineer
                 </h2>
-                <h1 className="text-5xl lg:6xl font-semibold px-10 ">
+                <h1 className="lg:6xl px-10 text-5xl font-semibold ">
                     <span className="mr-3">{text}</span>
                     <Cursor cursorColor="#F7AB0A" />
                 </h1>
