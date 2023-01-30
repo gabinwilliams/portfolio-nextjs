@@ -21,7 +21,7 @@ function Skill({ directionLeft }: Props) {
                 <Image
                     src={react_icon}
                     alt={"tech icon"}
-                    className="h-24 w-24 rounded-full border border-gray-500 object-cover hover:animate-pulse md:h-28 md:w-28 xl:h-32 xl:w-32"
+                    className="h-22 w-22 rounded-full border border-gray-500 object-cover hover:animate-pulse md:h-28 md:w-28 xl:h-32 xl:w-32"
                 ></Image>
             </motion.div>
         </div>

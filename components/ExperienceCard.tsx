@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import redux_icon from "public/icons/redux_icon.svg";
 
 type Props = {};
 
@@ -29,17 +30,17 @@ function ExperienceCard({}: Props) {
                 <div className="my-2 flex space-x-2">
                     <Image
                         className="h-10 w-10 rounded-full"
-                        src={""}
+                        src={redux_icon}
                         alt={"tech picture"}
                     ></Image>
                     <Image
                         className="h-10 w-10 rounded-full"
-                        src={""}
+                        src={redux_icon}
                         alt={"tech picture"}
                     ></Image>
                     <Image
                         className="h-10 w-10 rounded-full"
-                        src={""}
+                        src={redux_icon}
                         alt={"tech picture"}
                     ></Image>
                 </div>
