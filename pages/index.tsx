@@ -2,11 +2,13 @@ import Head from "next/head";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import Skills from "@/components/Skills";
 import WorkExperience from "@/components/WorkExperience";
+import Projects from "@/components/Projects";
 
 export default function Home() {
     return (
-        <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-scroll z-0">
+        <div className="z-0 h-screen snap-y snap-mandatory overflow-scroll bg-[rgb(36,36,36)] text-white">
             <Head>
                 <title>Gabin&apos;s Portfolio</title>
             </Head>
@@ -20,11 +22,12 @@ export default function Home() {
             <section id="experience" className="snap-center">
                 <WorkExperience />
             </section>
-
-            {/* Skills */}
-
-            {/* Projects */}
-
+            <section id="skills" className="snap-start">
+                <Skills />
+            </section>
+            <section>
+                <Projects />
+            </section>
             {/* Contact */}
         </div>
     );

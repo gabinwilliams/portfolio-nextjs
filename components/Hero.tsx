@@ -12,7 +12,7 @@ function Hero({}: Props) {
         words: [
             "Hi, the Name's Gabin Williams",
             "Coffee-mug-always-full.tsx",
-            "<ErrorDestroyer />",
+            "<ErrorEliminator />",
         ],
         loop: true,
         delaySpeed: 2000,
