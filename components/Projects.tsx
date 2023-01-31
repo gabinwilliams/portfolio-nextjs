@@ -11,7 +11,7 @@ function Projects({}: Props) {
             <h3 className="absolute top-24 text-2xl uppercase tracking-[20px] text-gray-500">
                 Projects
             </h3>
-            <div className="relative z-20 mt-[75px] flex w-full snap-x snap-mandatory overflow-y-hidden overflow-x-scroll">
+            <div className="relative z-20 mt-[20px] flex w-full snap-x snap-mandatory overflow-x-scroll overflow-y-hidden">
                 {projects.map((project, i) => (
                     <motion.div
                         initial={{ opacity: 0 }}
@@ -21,7 +21,7 @@ function Projects({}: Props) {
                         key={project}
                     >
                         <motion.div
-                            initial={{ y: -300, opacity: 0 }}
+                            initial={{ y: -100, opacity: 0 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1.2 }}
                             viewport={{ once: true }}
@@ -39,7 +39,7 @@ function Projects({}: Props) {
                                 </span>{" "}
                                 Twitter Clone
                             </h4>
-                            <p className="text-center text-lg md:text-left">
+                            <p className=" h-[200px] overflow-hidden overflow-y-scroll text-center text-lg md:text-left">
                                 Lorem ipsum dolor sit amet, consectetur
                                 adipiscing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore magna aliqua.
