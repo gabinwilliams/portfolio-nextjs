@@ -11,7 +11,7 @@ type Inputs = {
 type Props = {};
 
 function ContactMe({}: Props) {
-    const { register, handleSubmit } = useForm<Inputs>();
+    const { register, handleSubmit, reset } = useForm<Inputs>();
     const onSubmit: SubmitHandler<Inputs> = (formData) => {
         window.location.href = `mailto:gabinwilliams@gmail.com?subject=${formData.subject}&body=Hi, my name is ${formData.name}, ${formData.message}`;
     };
@@ -23,7 +23,7 @@ function ContactMe({}: Props) {
             </h3>
             <div className="flex flex-col space-y-10">
                 <h4 className="text-center text-4xl font-semibold">
-                    If my skills look like what your need,{" "}
+                    If my skills look like what you need,{" "}
                     <span className="underline decoration-[#F7AB0A]/50">
                         Let&apos;s talk!
                     </span>
@@ -48,13 +48,13 @@ function ContactMe({}: Props) {
                 >
                     <div className="flex space-x-2">
                         <input
-                            {...register("name")}
+                            {...(register("name"), { required: true })}
                             className="contactInput"
                             placeholder="Name"
                             type="text"
                         />
                         <input
-                            {...register("email")}
+                            {...(register("email"), { required: true })}
                             className="contactInput"
                             placeholder="Email"
                             type="email"
@@ -69,11 +69,12 @@ function ContactMe({}: Props) {
                     <textarea
                         className="contactInput"
                         placeholder="message"
-                        {...register("message")}
+                        {...(register("message"), { required: true })}
                     />
                     <button
                         className="rounded-md bg-[#F7AB0A] py-5 px-10 text-lg font-bold text-black"
                         type="submit"
+                        onClick={() => reset()}
                     >
                         Submit
                     </button>
