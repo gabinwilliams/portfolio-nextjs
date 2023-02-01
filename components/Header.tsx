@@ -5,8 +5,11 @@ import { motion } from "framer-motion";
 type Props = {};
 
 function Header({}: Props) {
+    const handleContactMe = () => {
+        window.location.href = `mailto:gabinwilliams@gmail.com`;
+    };
     return (
-        <header className="sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center">
+        <header className="sticky top-0 z-20 mx-auto flex max-w-7xl items-start justify-between bg-inherit p-5 xl:items-center">
             <motion.div
                 initial={{
                     x: -500,
@@ -58,15 +61,16 @@ function Header({}: Props) {
                 transition={{
                     duration: 1.5,
                 }}
-                className="flex flex-row items-center cursor-pointer"
+                className="flex cursor-pointer flex-row items-center"
             >
                 <SocialIcon
                     className="cursor-pointer"
                     network="email"
                     fgColor="gray"
                     bgColor="transparent"
+                    onClick={() => handleContactMe()}
                 />
-                <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
+                <p className="hidden text-sm uppercase text-gray-400 md:inline-flex">
                     Get in Touch
                 </p>
             </motion.div>

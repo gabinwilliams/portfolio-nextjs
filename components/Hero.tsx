@@ -12,7 +12,7 @@ function Hero({}: Props) {
         words: [
             "Hi, the Name's Gabin Williams",
             "Coffee-mug-always-full.tsx",
-            "<ErrorDestroyer />",
+            "<ErrorEliminator />",
         ],
         loop: true,
         delaySpeed: 2000,
@@ -44,6 +44,9 @@ function Hero({}: Props) {
                     </Link>
                     <Link href={"#projects"}>
                         <button className="heroButton">Projects</button>
+                    </Link>
+                    <Link href={"#contact"}>
+                        <button className="heroButton">Contact</button>
                     </Link>
                 </div>
             </div>

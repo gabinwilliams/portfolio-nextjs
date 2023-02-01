@@ -28,7 +28,7 @@ function About({}: Props) {
                 viewport={{ once: true }}
             >
                 <Image
-                    className="mt-[200px] mb-20 h-56 w-56 flex-shrink-0 rounded-full object-cover md:mt-0 md:mb-0 md:h-96 md:w-64 md:rounded-lg xl:h-[600px] xl:w-[500px]"
+                    className="mt-[100px] h-56 w-56 flex-shrink-0 rounded-full object-cover md:mt-0 md:mb-0 md:h-96 md:w-64 md:rounded-lg xl:mt-[200px] xl:h-[600px] xl:w-[500px]"
                     src={woods}
                     alt={"Profile Picture"}
                 ></Image>
@@ -41,7 +41,7 @@ function About({}: Props) {
                     </span>{" "}
                     background:
                 </h4>
-                <div className="md:w-[400px] xl:w-[600px]">
+                <div className="h-[200px] overflow-hidden overflow-y-scroll md:h-[400px] md:w-[400px] xl:w-[600px]">
                     <p className="text-base">
                         I&apos;m a lifelong learner with a strong urge to solve
                         problems with creative solutions. Software development

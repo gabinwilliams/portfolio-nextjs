@@ -1,15 +1,16 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import redux_icon from "public/icons/redux_icon.svg";
 
 type Props = {};
 
 function ExperienceCard({}: Props) {
     return (
-        <article className="mt-[200px] flex w-[500px] flex-shrink-0 cursor-pointer snap-center flex-col items-center space-y-7 overflow-hidden rounded-l bg-[#292929] p-10 opacity-40 transition-opacity duration-200 hover:opacity-100 md:w-[600px] xl:w-[900px]">
+        <article className="mt-[100px] flex h-[500px] w-[380px] flex-shrink-0 cursor-pointer snap-center flex-col items-center space-y-7 overflow-hidden overflow-y-scroll rounded-lg bg-[#292929] p-10 opacity-40 transition-opacity duration-200 hover:opacity-100 md:mt-[100px] md:w-[600px] xl:mt-[400px] xl:w-[900px]">
             <motion.div
                 initial={{ y: -100, opacity: 0 }}
-                transition={{ duration: 1.2 }}
+                transition={{ duration: 0.7 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
             >
@@ -29,17 +30,17 @@ function ExperienceCard({}: Props) {
                 <div className="my-2 flex space-x-2">
                     <Image
                         className="h-10 w-10 rounded-full"
-                        src={""}
+                        src={redux_icon}
                         alt={"tech picture"}
                     ></Image>
                     <Image
                         className="h-10 w-10 rounded-full"
-                        src={""}
+                        src={redux_icon}
                         alt={"tech picture"}
                     ></Image>
                     <Image
                         className="h-10 w-10 rounded-full"
-                        src={""}
+                        src={redux_icon}
                         alt={"tech picture"}
                     ></Image>
                 </div>
