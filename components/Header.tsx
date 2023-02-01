@@ -5,6 +5,9 @@ import { motion } from "framer-motion";
 type Props = {};
 
 function Header({}: Props) {
+    const handleContactMe = () => {
+        window.location.href = `mailto:gabinwilliams@gmail.com`;
+    };
     return (
         <header className="sticky top-0 z-20 mx-auto flex max-w-7xl items-start justify-between bg-inherit p-5 xl:items-center">
             <motion.div
@@ -65,6 +68,7 @@ function Header({}: Props) {
                     network="email"
                     fgColor="gray"
                     bgColor="transparent"
+                    onClick={() => handleContactMe()}
                 />
                 <p className="hidden text-sm uppercase text-gray-400 md:inline-flex">
                     Get in Touch
