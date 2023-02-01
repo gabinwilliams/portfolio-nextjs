@@ -21,8 +21,9 @@ function Hero({}: Props) {
         <motion.div className="flex h-screen flex-col items-center justify-center space-y-8 overflow-hidden text-center">
             <Image
                 className="relative mx-auto h-44 w-44 rounded-full object-cover"
-                src={water}
                 alt={"profile image"}
+                src={water}
+                priority
             ></Image>
             <div className="z-20">
                 <h2 className="text-md pb-2 uppercase tracking-[10px] text-gray-500">
