@@ -7,6 +7,10 @@ const nextConfig = {
                 protocol: "https",
                 hostname: "scontent-msp1-1.xx.fbcdn.net",
             },
+            {
+                protocol: "https",
+                hostname: "cdn.sanity.io",
+            },
         ],
     },
 };
