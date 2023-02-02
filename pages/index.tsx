@@ -9,14 +9,35 @@ import WorkExperience from "@/components/WorkExperience";
 import Projects from "@/components/Projects";
 import ContactMe from "@/components/ContactMe";
 import { HomeIcon } from "@heroicons/react/24/solid";
+import { GetStaticProps } from "next";
+import { fetchPageInfo } from "@/utils/fetchPageInfo";
+import { fetchExperience } from "@/utils/fetchExperience";
+import { fetchProjects } from "@/utils/fetchProjects";
+import { fetchSkills } from "@/utils/fetchSkills";
+import { fetchSocials } from "@/utils/fetchSocials";
+import { PageInfo, Experience, Skill, Project, Social } from "@/typings";
 
-export default function Home() {
+type Props = {
+    pageInfo: PageInfo;
+    experience: Experience[];
+    skills: Skill[];
+    projects: Project[];
+    socials: Social[];
+};
+
+export default function Home({
+    pageInfo,
+    experience,
+    skills,
+    projects,
+    socials,
+}: Props) {
     return (
         <div className="z-0 h-screen snap-y snap-mandatory overflow-x-scroll overflow-y-scroll bg-[rgb(36,36,36)] text-white scrollbar overflow-x-hidden scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
             <Head>
                 <title>Gabin&apos;s Portfolio</title>
             </Head>
-            <Header />
+            <Header socials={socials} />
             <section id="hero" className="snap-start">
                 <Hero />
             </section>
@@ -45,3 +66,23 @@ export default function Home() {
         </div>
     );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+    const pageInfo: PageInfo[] = await fetchPageInfo();
+    const experience: Experience[] = await fetchExperience();
+    const skills: Skill[] = await fetchSkills();
+    const projects: Project[] = await fetchProjects();
+    const socials: Social[] = await fetchSocials();
+
+    return {
+        props: {
+            pageInfo,
+            experience,
+            skills,
+            projects,
+            socials,
+        },
+        // Use ISR instead of SSR because it's faster and caches the data and re-validates the cache every 30 seconds.
+        revalidate: 30,
+    };
+};

@@ -1,10 +1,13 @@
 import React from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
+import { Social } from "@/typings";
 
-type Props = {};
+type Props = {
+    socials: Social[];
+};
 
-function Header({}: Props) {
+function Header({ socials }: Props) {
     const handleContactMe = () => {
         window.location.href = `mailto:gabinwilliams@gmail.com`;
     };
@@ -26,26 +29,14 @@ function Header({}: Props) {
                 }}
                 className="flex flex-row items-center"
             >
-                <SocialIcon
-                    url="https://www.linkedin.com/in/joshua-garcia-10b10b10b/"
-                    fgColor="gray"
-                    bgColor="transparent"
-                />
-                <SocialIcon
-                    url="https://www.linkedin.com/in/joshua-garcia-10b10b10b/"
-                    fgColor="gray"
-                    bgColor="transparent"
-                />
-                <SocialIcon
-                    url="https://www.linkedin.com/in/joshua-garcia-10b10b10b/"
-                    fgColor="gray"
-                    bgColor="transparent"
-                />
-                <SocialIcon
-                    url="https://www.linkedin.com/in/joshua-garcia-10b10b10b/"
-                    fgColor="gray"
-                    bgColor="transparent"
-                />
+                {socials.map((social) => (
+                    <SocialIcon
+                        key={social._id}
+                        url={social.url}
+                        fgColor="gray"
+                        bgColor="transparent"
+                    />
+                ))}
             </motion.div>
             <motion.div
                 initial={{
