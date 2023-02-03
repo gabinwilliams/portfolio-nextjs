@@ -7,7 +7,7 @@ const query = groq`
     *[_type == "project"] {
         // give me all projects and expand Technologies type out
         ...,
-        Technologies[]->
+        technologies[]->
     }
 `;
 

@@ -40,12 +40,13 @@ export interface Skill extends SanityBody {
 
 export interface Experience extends SanityBody {
     _type: "experience";
-    company: string;
+    companyBullets: string[];
     companyImage: Image;
     dateStarted: date;
     dateEnded: date;
     isCurrentlyWorkingHere: boolean;
     jobTitle: string;
+    companyName: string;
     points: string[];
     technologies: Technology[];
 }

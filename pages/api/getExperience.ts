@@ -5,9 +5,9 @@ import { Experience } from "@/typings";
 
 const query = groq`
     *[_type == "experience"] {
-        // give me all experiences and expand Technologies type out
+        // give me all experiences and expand technologies type out
         ...,
-        Technologies[]->
+        technologies[]->
     }
 `;
 

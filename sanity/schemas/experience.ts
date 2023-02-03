@@ -11,6 +11,11 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'companyName',
+      title: 'CompanyName',
+      type: 'string',
+    }),
+    defineField({
       name: 'companyImage',
       title: 'CompanyImage',
       type: 'image',
@@ -19,9 +24,10 @@ export default defineType({
       },
     }),
     defineField({
-      name: 'company',
-      title: 'Company',
-      type: 'text',
+      name: 'companyBullets',
+      title: 'CompanyBullets',
+      type: 'array',
+      of: [{type: 'string'}],
     }),
     defineField({
       name: 'dateStarted',
