@@ -2,10 +2,14 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import woods from "@/public/woods.JPG";
+import { PageInfo } from "@/typings";
+import { urlFor } from "@/sanity";
 
-type Props = {};
+type Props = {
+    pageInfo: PageInfo;
+};
 
-function About({}: Props) {
+function About({ pageInfo }: Props) {
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -29,7 +33,9 @@ function About({}: Props) {
             >
                 <Image
                     className="mt-[100px] h-56 w-56 flex-shrink-0 rounded-full object-cover md:mt-0 md:mb-0 md:h-96 md:w-64 md:rounded-lg xl:mt-[200px] xl:h-[600px] xl:w-[500px]"
-                    src={woods}
+                    src={urlFor(pageInfo?.profilePic).url()}
+                    width="600"
+                    height="800"
                     alt={"Profile Picture"}
                 ></Image>
             </motion.div>
@@ -43,18 +49,7 @@ function About({}: Props) {
                 </h4>
                 <div className="h-[200px] overflow-hidden overflow-y-scroll md:h-[400px] md:w-[400px] xl:w-[600px]">
                     <p className="text-base">
-                        I&apos;m a lifelong learner with a strong urge to solve
-                        problems with creative solutions. Software development
-                        fulfills this fully. My current biggest problem is
-                        figuring out how to fly fish successfully before the
-                        fish stop biting. I&apos;m passionate about everything
-                        outdoors and will jump in a car and head west if I have
-                        anything longer than a 3-day weekend. I love to get
-                        nerdy about blockchain and the different projects that
-                        are providing real utility and may have a bright future.
-                        I enjoy connecting with a wide variety of people whether
-                        you&apos;re into tech or want to hit the trails,
-                        introduce yourself, and let&apos;s chat!
+                        {pageInfo.backgroundInformation}
                     </p>
                 </div>
             </div>
