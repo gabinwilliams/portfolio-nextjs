@@ -1,13 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import react_icon from "public/icons/react_icon.svg";
+import { urlFor } from "@/sanity";
+import { Skill } from "@/typings";
 
 type Props = {
     directionLeft?: boolean;
+    skill: Skill;
 };
 
-function Skill({ directionLeft }: Props) {
+function TechSkill({ directionLeft, skill }: Props) {
     return (
         <div className="group relative flex cursor-pointer">
             <motion.div
@@ -20,13 +22,15 @@ function Skill({ directionLeft }: Props) {
                 viewport={{ once: true }}
             >
                 <Image
-                    src={react_icon}
+                    src={urlFor(skill?.image).url()}
                     alt={"tech icon"}
-                    className="h-22 w-22 rounded-full border border-gray-500 object-cover hover:animate-pulse md:h-28 md:w-28 xl:h-32 xl:w-32"
+                    width="100"
+                    height="100"
+                    className="h-22 w-22 md:h-26 md:w-26 object-cover hover:animate-pulse xl:h-32 xl:w-32"
                 ></Image>
             </motion.div>
         </div>
     );
 }
 
-export default Skill;
+export default TechSkill;
