@@ -21,8 +21,8 @@ function ExperienceCard({ job }: Props) {
                     className="h-32 w-32 rounded-full object-cover object-center xl:h-[200px] xl:w-[200px]"
                     src={urlFor(job?.companyImage).url()}
                     alt={"company logo"}
-                    width="56"
-                    height="56"
+                    width="200"
+                    height="200"
                 ></Image>
             </motion.div>
             <div className="px-0 md:px-10">
