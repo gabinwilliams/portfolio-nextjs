@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import redux_icon from "public/icons/redux_icon.svg";
 import { motion } from "framer-motion";
-import { urlFor } from "@/sanity";
+import { urlFor } from "@/lib/sanity";
 import { Project } from "@/typings";
 
 type Props = {
