@@ -83,6 +83,6 @@ export const getStaticProps: GetStaticProps = async () => {
             socials,
         },
         // Use ISR instead of SSR because it's faster and caches the data and re-validates the cache every 30 seconds.
-        revalidate: 30,
+        revalidate: 60 * 60,
     };
 };
