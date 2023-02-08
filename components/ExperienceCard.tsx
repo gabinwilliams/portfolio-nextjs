@@ -10,7 +10,7 @@ type Props = {
 
 function ExperienceCard({ job }: Props) {
     return (
-        <article className="mt-[50px] flex h-[480px] w-[350px] flex-shrink-0 cursor-pointer snap-center flex-col items-center space-y-7 overflow-hidden rounded-lg bg-[#292929] p-10 opacity-100 transition-opacity duration-200 hover:opacity-100 md:mt-[100px] md:h-[50vh] md:w-[600px] md:overflow-y-scroll md:opacity-50 xl:mt-[100px] xl:h-[50vh] xl:w-[700px]">
+        <article className="mt-[50px] flex h-[480px] w-[350px] flex-shrink-0 cursor-pointer snap-center flex-col items-center space-y-7 overflow-hidden rounded-lg bg-[#292929] p-10 opacity-100 transition-opacity duration-200 hover:opacity-100 md:mt-[100px] md:h-[60vh] md:w-[600px] md:overflow-y-scroll md:opacity-50 xl:mt-[100px] xl:w-[700px]">
             <motion.div
                 initial={{ y: -100, opacity: 0 }}
                 transition={{ duration: 0.7 }}
