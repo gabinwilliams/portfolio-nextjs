@@ -11,7 +11,7 @@ type Props = {
 
 function TechSkill({ directionLeft, skill }: Props) {
     return (
-        <div className="group relative flex cursor-pointer">
+        <div className="group flex cursor-pointer">
             <motion.div
                 initial={{
                     x: directionLeft ? -50 : 50,
@@ -26,7 +26,7 @@ function TechSkill({ directionLeft, skill }: Props) {
                     alt={"tech icon"}
                     width="100"
                     height="100"
-                    className="md:h-26 md:w-26 h-18 w-18 object-contain hover:animate-pulse xl:h-32 xl:w-32"
+                    className="h-18 w-18 object-contain hover:animate-pulse md:h-20 md:w-20"
                 ></Image>
             </motion.div>
         </div>
