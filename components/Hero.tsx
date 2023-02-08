@@ -38,7 +38,7 @@ function Hero({ pageInfo }: Props) {
                     <Cursor cursorColor="#F7AB0A" />
                 </h1>
             </div>
-            <div className=" absolute bottom-20 flex flex-wrap justify-around md:bottom-60">
+            <div className="absolute bottom-20 flex flex-wrap justify-around md:static md:bottom-60">
                 <Link href={"#about"}>
                     <button className="heroButton">About</button>
                 </Link>

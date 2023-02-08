@@ -14,7 +14,7 @@ function About({ pageInfo }: Props) {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
-            className="relative mx-auto flex h-screen max-w-7xl flex-col items-center justify-evenly px-10 text-center md:flex-row md:text-left"
+            className="relative mx-auto flex h-screen max-w-7xl flex-col items-center justify-evenly overflow-hidden px-10 text-center md:flex-row md:text-left"
         >
             <h3 className="absolute top-24 text-2xl uppercase tracking-[20px] text-gray-500">
                 About
@@ -31,14 +31,14 @@ function About({ pageInfo }: Props) {
                 viewport={{ once: true }}
             >
                 <Image
-                    className="mt-[100px] h-56 w-56 flex-shrink-0 rounded-full object-cover md:mt-0 md:mb-0 md:h-96 md:w-64 md:rounded-lg xl:mt-[200px] xl:h-[600px] xl:w-[500px]"
+                    className="mt-[100px] h-56 w-56 flex-shrink-0 rounded-full object-cover md:mt-0 md:mb-0 md:h-96 md:w-64 md:rounded-lg xl:mt-[200px] xl:h-[400px] xl:w-[400px]"
                     src={urlFor(pageInfo?.profilePic).url()}
                     width="600"
                     height="800"
                     alt={"Profile Picture"}
                 ></Image>
             </motion.div>
-            <div className="space-y-10 px-0 md:px-10">
+            <div className="space-y-10 px-0 md:mt-[100px] md:px-10 xl:mt-[200px]">
                 <h4 className="text-4xl font-semibold">
                     Here is a{" "}
                     <span className="underline decoration-[#F7AB0A]">
