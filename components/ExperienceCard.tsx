@@ -10,7 +10,7 @@ type Props = {
 
 function ExperienceCard({ job }: Props) {
     return (
-        <article className="mt-[100px] flex h-[500px] w-[380px] flex-shrink-0 cursor-pointer snap-center flex-col items-center space-y-7 overflow-hidden overflow-y-scroll rounded-lg bg-[#292929] p-10 opacity-40 transition-opacity duration-200 hover:opacity-100 md:mt-[100px] md:w-[600px] xl:mt-[400px] xl:w-[900px]">
+        <article className="mt-[50px] flex h-[480px] w-[350px] flex-shrink-0 cursor-pointer snap-center flex-col items-center space-y-7 overflow-hidden rounded-lg bg-[#292929] p-10 opacity-100 transition-opacity duration-200 hover:opacity-100 md:mt-[100px] md:h-[600px] md:w-[600px] md:overflow-y-scroll md:opacity-50 xl:mt-[100px] xl:w-[700px]">
             <motion.div
                 initial={{ y: -100, opacity: 0 }}
                 transition={{ duration: 0.7 }}
@@ -18,7 +18,7 @@ function ExperienceCard({ job }: Props) {
                 viewport={{ once: true }}
             >
                 <Image
-                    className="h-32 w-32 rounded-full object-cover object-center xl:h-[200px] xl:w-[200px]"
+                    className="h-32 w-32 rounded-full object-cover object-center"
                     src={urlFor(job?.companyImage).url()}
                     alt={"company logo"}
                     width="200"
@@ -28,11 +28,11 @@ function ExperienceCard({ job }: Props) {
             <div className="px-0 md:px-10">
                 <h4 className="text-4xl font-light">{job?.jobTitle}</h4>
                 <p className="mt-1 text-2xl font-bold">{job?.companyName}</p>
-                <div className="my-2 flex space-x-2">
+                <div className="my-2 flex flex-wrap">
                     {job?.technologies.map((technology) => (
                         <Image
                             key={technology._id}
-                            className="h-10 w-10"
+                            className="m-1 h-10 w-10 object-contain"
                             src={urlFor(technology.image).url()}
                             alt={"tech picture"}
                             width="100"
