@@ -21,7 +21,7 @@ function Skills({ skills }: Props) {
             <h3 className="absolute top-36 p-6 text-sm uppercase tracking-[3px] text-gray-500">
                 The list continues to grow and expand!
             </h3>
-            <div className="mt-[50px] grid grid-cols-4 gap-5 p-6 md:grid-cols-6">
+            <div className="mt-[100px] grid grid-cols-4 gap-5 p-6 md:grid-cols-6">
                 {skills?.slice(0, skills.length / 2).map((skill) => (
                     <TechSkill key={skill._id} skill={skill} />
                 ))}
