@@ -21,14 +21,14 @@ function ContactMe({}: Props) {
             <h3 className="absolute top-24 text-2xl uppercase tracking-[20px] text-gray-500">
                 Contact
             </h3>
-            <div className="flex flex-col space-y-10">
+            <div className="flex w-screen flex-col space-y-5">
                 <h4 className="text-center text-4xl font-semibold">
                     If my skills look like what you need,{" "}
                     <span className="underline decoration-[#F7AB0A]/50">
                         Let&apos;s talk!
                     </span>
                 </h4>
-                <div className="space-y-10">
+                <div className="space-y-5">
                     <div className="flex items-center justify-center space-x-5">
                         <PhoneIcon className="h-7 w-7 animate-pulse text-[#F7AB0A]" />
                         <p className="text-2xl">+1-222-222-1511</p>
@@ -43,10 +43,10 @@ function ContactMe({}: Props) {
                     </div>
                 </div>
                 <form
-                    className="mx-auto flex w-fit flex-col space-y-2"
+                    className="flex flex-col space-y-2 p-5 md:mx-auto"
                     onSubmit={handleSubmit(onSubmit)}
                 >
-                    <div className="flex space-x-2">
+                    <div className="flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-2">
                         <input
                             {...(register("name"), { required: true })}
                             className="contactInput"
