@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
+import { MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 
 type Inputs = {
     name: string;
@@ -16,24 +16,26 @@ function ContactMe({}: Props) {
         window.location.href = `mailto:gabinwilliams@gmail.com?subject=${formData.subject}&body=Hi, my name is ${formData.name}, ${formData.message}`;
     };
 
+    const handleResetForm = () => {
+        setTimeout(() => {
+            reset();
+        }, 500);
+    };
+
     return (
         <div className="relative mx-auto flex h-screen max-w-7xl flex-col items-center justify-evenly overflow-hidden px-10 text-center md:flex-row md:text-left">
             <h3 className="absolute top-24 text-2xl uppercase tracking-[20px] text-gray-500">
                 Contact
             </h3>
-            <div className="flex w-screen flex-col space-y-5">
-                <h4 className="text-center text-4xl font-semibold">
+            <div className="flex w-screen flex-col space-y-3 p-2 md:mt-[100px] md:mb-[30px]">
+                <h4 className="py-5 text-center text-2xl font-semibold md:text-4xl">
                     If my skills look like what you need,{" "}
                     <span className="underline decoration-[#F7AB0A]/50">
                         Let&apos;s talk!
                     </span>
                 </h4>
-                <div className="space-y-5">
-                    <div className="flex items-center justify-center space-x-5">
-                        <PhoneIcon className="h-7 w-7 animate-pulse text-[#F7AB0A]" />
-                        <p className="text-2xl">+1-222-222-1511</p>
-                    </div>
-                    <div className="flex items-center justify-center space-x-5">
+                <div className="space-y-3">
+                    <div className="flex items-center justify-center space-x-3">
                         <MapPinIcon className="h-7 w-7 animate-pulse text-[#F7AB0A]" />
                         <p className="text-2xl">Minneapolis</p>
                     </div>
@@ -61,7 +63,7 @@ function ContactMe({}: Props) {
                         />
                     </div>
                     <input
-                        {...register("subject")}
+                        {...(register("subject"), { required: true })}
                         className="contactInput"
                         placeholder="subject"
                         type="text"
@@ -72,9 +74,9 @@ function ContactMe({}: Props) {
                         {...(register("message"), { required: true })}
                     />
                     <button
-                        className="rounded-md bg-[#F7AB0A] py-5 px-10 text-lg font-bold text-black"
+                        className="rounded-md bg-[#F7AB0A] py-4 px-5 text-lg font-bold text-black md:py-5 md:px-10"
                         type="submit"
-                        onClick={() => reset()}
+                        onClick={() => handleResetForm()}
                     >
                         Submit
                     </button>
