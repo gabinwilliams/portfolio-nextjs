@@ -4,7 +4,7 @@ import { sanityClient } from "@/lib/sanity";
 import { Experience } from "@/typings";
 
 const query = groq`
-    *[_type == "experience"] {
+    *[_type == "experience"] | order(_createdAt asc) {
         // give me all experiences and expand technologies type out
         ...,
         technologies[]->

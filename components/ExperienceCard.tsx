@@ -18,7 +18,7 @@ function ExperienceCard({ job }: Props) {
                 viewport={{ once: true }}
             >
                 <Image
-                    className="h-32 w-32 rounded-full object-cover object-center"
+                    className="h-32 w-32 rounded-sm object-contain object-center"
                     src={urlFor(job?.companyImage).url()}
                     alt={"company logo"}
                     width="200"
@@ -29,7 +29,7 @@ function ExperienceCard({ job }: Props) {
                 <h4 className="text-4xl font-light">{job?.jobTitle}</h4>
                 <p className="mt-1 text-2xl font-bold">{job?.companyName}</p>
                 <div className="my-2 flex flex-wrap">
-                    {job?.technologies.map((technology) => (
+                    {job?.technologies?.map((technology) => (
                         <Image
                             key={technology._id}
                             className="m-1 h-10 w-10 object-contain"
@@ -45,7 +45,7 @@ function ExperienceCard({ job }: Props) {
                     {job?.isCurrentlyWorkingHere ? "Current" : job?.dateEnded}
                 </p>
                 <ul className="ml-5 list-disc space-y-4 text-lg">
-                    {job?.companyBullets.map((bullet) => (
+                    {job?.companyBullets?.map((bullet) => (
                         <li key={bullet}>{bullet}</li>
                     ))}
                 </ul>
