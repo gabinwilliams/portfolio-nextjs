@@ -33,7 +33,7 @@ function ExperienceCard({ job }: Props) {
                         <Image
                             key={technology._id}
                             className="m-1 h-10 w-10 object-contain"
-                            src={urlFor(technology.image).url()}
+                            src={urlFor(technology?.image).url()}
                             alt={"tech picture"}
                             width="100"
                             height="100"
