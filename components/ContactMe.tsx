@@ -12,8 +12,8 @@ type Props = {};
 
 function ContactMe({}: Props) {
     const { register, handleSubmit, reset } = useForm<Inputs>();
-    const onSubmit: SubmitHandler<Inputs> = (formData) => {
-        window.location.href = `mailto:gabinwilliams@gmail.com?subject=${formData.subject}&body=Hi, my name is ${formData.name}, ${formData.message}`;
+    const onSubmit: SubmitHandler<Inputs> = async (formData) => {
+        window.location.href = `mailto:gabinwilliams@gmail.com?subject=${await formData.subject}&body=Hi, my name is ${await formData.name}, ${await formData.message}`;
     };
 
     const handleResetForm = () => {
@@ -50,20 +50,20 @@ function ContactMe({}: Props) {
                 >
                     <div className="flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-2">
                         <input
-                            {...(register("name"), { required: true })}
+                            {...register("name", { required: true })}
                             className="contactInput"
                             placeholder="Name"
                             type="text"
                         />
                         <input
-                            {...(register("email"), { required: true })}
+                            {...register("email", { required: true })}
                             className="contactInput"
                             placeholder="Email"
                             type="email"
                         />
                     </div>
                     <input
-                        {...(register("subject"), { required: true })}
+                        {...register("subject", { required: true })}
                         className="contactInput"
                         placeholder="subject"
                         type="text"
@@ -71,7 +71,7 @@ function ContactMe({}: Props) {
                     <textarea
                         className="contactInput"
                         placeholder="message"
-                        {...(register("message"), { required: true })}
+                        {...register("message", { required: true })}
                     />
                     <button
                         className="rounded-md bg-[#F7AB0A] py-4 px-5 text-lg font-bold text-black md:py-5 md:px-10"
