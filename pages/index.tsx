@@ -1,21 +1,21 @@
-import Head from "next/head";
-import Link from "next/link";
-import Image from "next/image";
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Skills from "@/components/Skills";
-import WorkExperience from "@/components/WorkExperience";
-import Projects from "@/components/Projects";
-import ContactMe from "@/components/ContactMe";
-import { HomeIcon } from "@heroicons/react/24/solid";
-import { GetStaticProps } from "next";
-import { fetchPageInfo } from "@/utils/fetchPageInfo";
-import { fetchExperience } from "@/utils/fetchExperience";
-import { fetchProjects } from "@/utils/fetchProjects";
-import { fetchSkills } from "@/utils/fetchSkills";
-import { fetchSocials } from "@/utils/fetchSocials";
-import { PageInfo, Experience, Skill, Project, Social } from "@/typings";
+import React from 'react';
+import Head from 'next/head';
+import Link from 'next/link';
+import Header from '../components/Header';
+import Hero from '../components/Hero';
+import About from '../components/About';
+import Skills from '../components/Skills';
+import WorkExperience from '../components/WorkExperience';
+import Projects from '../components/Projects';
+import ContactMe from '../components/ContactMe';
+import { HomeIcon } from '@heroicons/react/24/solid';
+import { GetStaticProps } from 'next';
+import { fetchPageInfo } from '../utils/fetchPageInfo';
+import { fetchExperience } from '../utils/fetchExperience';
+import { fetchProjects } from '../utils/fetchProjects';
+import { fetchSkills } from '../utils/fetchSkills';
+import { fetchSocials } from '../utils/fetchSocials';
+import { PageInfo, Experience, Skill, Project, Social } from '../typings';
 
 type Props = {
     pageInfo: PageInfo;
@@ -33,33 +33,33 @@ export default function Home({
     socials,
 }: Props) {
     return (
-        <div className="z-0 h-screen snap-y snap-mandatory overflow-x-scroll overflow-y-scroll bg-[rgb(36,36,36)] text-white scrollbar overflow-x-hidden scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
+        <div className='z-0 h-screen snap-y snap-mandatory overflow-x-scroll overflow-y-scroll bg-[rgb(36,36,36)] text-white scrollbar overflow-x-hidden scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
             <Head>
                 <title>Gabin&apos;s Portfolio</title>
             </Head>
             <Header socials={socials} />
-            <section id="hero" className="snap-start">
+            <section id='hero' className='snap-start'>
                 <Hero pageInfo={pageInfo} />
             </section>
-            <section id="about" className="snap-center">
+            <section id='about' className='snap-center'>
                 <About pageInfo={pageInfo} />
             </section>
-            <section id="experience" className="snap-start">
+            <section id='experience' className='snap-start'>
                 <WorkExperience experience={experience} />
             </section>
-            <section id="skills" className="snap-start">
+            <section id='skills' className='snap-start'>
                 <Skills skills={skills} />
             </section>
-            <section id="projects" className="snap-start">
+            <section id='projects' className='snap-start'>
                 <Projects projects={projects} />
             </section>
-            <section id="contact" className="snap-start">
+            <section id='contact' className='snap-start'>
                 <ContactMe />
             </section>
-            <Link href="#hero">
-                <footer className="sticky bottom-5 w-full cursor-pointer">
-                    <div className="flex items-center justify-center">
-                        <HomeIcon className="h-10 w-10 cursor-pointer hover:text-[#F7AB0A]/80" />
+            <Link href='#hero'>
+                <footer className='sticky bottom-5 w-full cursor-pointer'>
+                    <div className='flex items-center justify-center'>
+                        <HomeIcon className='h-10 w-10 cursor-pointer hover:text-[#F7AB0A]/80' />
                     </div>
                 </footer>
             </Link>
