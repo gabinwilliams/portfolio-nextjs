@@ -1,19 +1,24 @@
-import type { NextApiRequest, NextApiResponse } from "next";
-import { groq } from "next-sanity";
-import { sanityClient } from "@/lib/sanity";
-import { Skill } from "@/typings";
-
-const query = groq`
-    *[_type == "skill"]
-`;
-
-type Data = { skills: Skill[] };
+import { MongoClient } from 'mongodb';
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(
     req: NextApiRequest,
-    res: NextApiResponse<Data>
+    res: NextApiResponse
 ) {
-    const skills: Skill[] = await sanityClient.fetch(query);
+    const url = process.env.MONGODB_CONNECT_URI || '';
+    const client = new MongoClient(url);
 
-    res.status(200).json({ skills });
+    try {
+        await client.connect();
+        const collection = client.db('portfolio').collection('getSkills');
+        const getSkills = await collection.find({}).toArray();
+
+        res.status(200).json({ getSkills });
+    } catch (error) {
+        res.status(500).json({
+            error: 'Error connecting to database for getSkills',
+        });
+    } finally {
+        await client.close();
+    }
 }

@@ -5,8 +5,8 @@ export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse
 ) {
-    const uri = process.env.MONGODB_CONNECT_URI || '';
-    const client = new MongoClient(uri);
+    const url = process.env.MONGODB_CONNECT_URI || '';
+    const client = new MongoClient(url);
 
     try {
         await client.connect();

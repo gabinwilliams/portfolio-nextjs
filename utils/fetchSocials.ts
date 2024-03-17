@@ -1,4 +1,4 @@
-import { Social } from "@/typings";
+import { Social } from '../typings';
 
 export const fetchSocials = async () => {
     const res = await fetch(
