@@ -1,8 +1,7 @@
-import React from "react";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import { urlFor } from "@/lib/sanity";
-import { Skill } from "@/typings";
+import React from 'react';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import { Skill } from '../typings';
 
 type Props = {
     directionLeft?: boolean;
@@ -11,7 +10,7 @@ type Props = {
 
 function TechSkill({ directionLeft, skill }: Props) {
     return (
-        <div className="group flex cursor-pointer">
+        <div className='group flex cursor-pointer'>
             <motion.div
                 initial={{
                     x: directionLeft ? -50 : 50,
@@ -22,11 +21,11 @@ function TechSkill({ directionLeft, skill }: Props) {
                 viewport={{ once: true }}
             >
                 <Image
-                    src={urlFor(skill?.image).url()}
-                    alt={"tech icon"}
-                    width="100"
-                    height="100"
-                    className="h-18 w-18 object-contain hover:animate-pulse md:h-20 md:w-20"
+                    src={skill?.image}
+                    alt={'tech icon'}
+                    width='100'
+                    height='100'
+                    className='h-18 w-18 object-contain hover:animate-pulse md:h-20 md:w-20'
                 ></Image>
             </motion.div>
         </div>

@@ -1,23 +1,26 @@
-import type { NextApiRequest, NextApiResponse } from "next";
-import { groq } from "next-sanity";
-import { sanityClient } from "@/lib/sanity";
-import { Project } from "@/typings";
-
-const query = groq`
-    *[_type == "project"] {
-        // give me all projects and expand Technologies type out
-        ...,
-        technologies[]->
-    }
-`;
-
-type Data = { projects: Project[] };
+import { MongoClient } from 'mongodb';
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(
     req: NextApiRequest,
-    res: NextApiResponse<Data>
+    res: NextApiResponse
 ) {
-    const projects: Project[] = await sanityClient.fetch(query);
+    const url = process.env.MONGODB_CONNECT_URL || '';
+    const client = new MongoClient(url);
 
-    res.status(200).json({ projects });
+    try {
+        await client.connect();
+        const collection = client
+            .db(process.env.MONGODB_DATABASE || '')
+            .collection('projects');
+        const getProjects = await collection.find({}).toArray();
+
+        res.status(200).json(getProjects);
+    } catch (error) {
+        res.status(500).json({
+            error: 'Error connecting to database for getProjects',
+        });
+    } finally {
+        await client.close();
+    }
 }
