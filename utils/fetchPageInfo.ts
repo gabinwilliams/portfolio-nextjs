@@ -6,7 +6,7 @@ export const fetchPageInfo = async () => {
             `${process.env.NEXT_PUBLIC_BASE_URL}/api/getPageInfo`
         );
 
-        return data;
+        return data[0];
     } catch (err) {
         console.error('Failed to fetch page info:', err);
         return null;

@@ -74,7 +74,7 @@ export const getStaticProps: GetStaticProps = async () => {
         const skills = await fetchSkills();
         const projects = await fetchProjects();
         const socials = await fetchSocials();
-
+        
         return {
             props: {
                 pageInfo,
@@ -83,7 +83,7 @@ export const getStaticProps: GetStaticProps = async () => {
                 projects,
                 socials,
             },
-            revalidate: 60,
+            revalidate: 60 * 60 * 24, // Revalidate once a day
         };
     } catch (error) {
         console.error('Error fetching data in getStaticProps:', error);

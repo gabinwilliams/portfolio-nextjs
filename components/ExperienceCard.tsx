@@ -40,7 +40,7 @@ function ExperienceCard({ job }: Props) {
                     ))}
                 </div>
                 <p className='py-5 uppercase text-gray-300'>
-                    {new Date(job?.dateStarted).toDateString()} -{' '}
+                    {job?.dateStarted.toString()} -{' '}
                     {job?.isCurrentlyWorkingHere
                         ? 'Current'
                         : job?.dateEnded.toString()}
