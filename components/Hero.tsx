@@ -24,7 +24,7 @@ function Hero({ pageInfo }: Props) {
             <Image
                 className='mx-auto h-44 w-44 rounded-full object-cover'
                 alt={'profile image'}
-                src={pageInfo?.heroImage || '/profile.jpg'}
+                src={pageInfo?.heroImage}
                 width='200'
                 height='200'
             ></Image>

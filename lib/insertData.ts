@@ -5,7 +5,7 @@ const experienceData = [
         _id: '01',
         jobTitle: 'Software Engineer',
         companyName: 'Turnberry Solutions',
-        companyImage: 'public/icons/github_icon.svg',
+        companyImage: '/icons/github_icon.svg',
         companyBullets: [
             `Developed a feature for an internal tool enabling engineers to update status messages and display
         banners on our application during issues, bypassing the need for direct production database access.`,

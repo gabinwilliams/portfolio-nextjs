@@ -1,21 +1,20 @@
-// SANITY TYPES
-interface SanityBody {
+interface Body {
     _createdAt: string;
     _id: string;
     _rev: string;
     _updatedAt: string;
 }
 
-interface Image {
-    url: any;
-    _type: 'image';
-    asset: {
-        _ref: string;
-        _type: 'reference';
-    };
-}
+// interface Image {
+//     url: any;
+//     _type: 'image';
+//     asset: {
+//         _ref: string;
+//         _type: 'reference';
+//     };
+// }
 
-export interface PageInfo extends SanityBody {
+export interface PageInfo extends Body {
     _type: 'pageInfo';
     address: string;
     backgroundInformation: string;
@@ -27,19 +26,19 @@ export interface PageInfo extends SanityBody {
     profileImage: Image;
 }
 
-export interface Technology extends SanityBody {
+export interface Technology extends Body {
     _type: 'skill';
     image: Image;
     title: string;
 }
 
-export interface Skill extends SanityBody {
+export interface Skill extends Body {
     _type: 'skill';
     image: Image;
     title: string;
 }
 
-export interface Experience extends SanityBody {
+export interface Experience extends Body {
     _type: 'experience';
     companyBullets: string[];
     companyImage: Image;
@@ -52,7 +51,7 @@ export interface Experience extends SanityBody {
     technologies: Technology[];
 }
 
-export interface Project extends SanityBody {
+export interface Project extends Body {
     _type: 'project';
     image: Image;
     linkToBuild: string;
@@ -60,7 +59,7 @@ export interface Project extends SanityBody {
     technologies: Technology[];
 }
 
-export interface Social extends SanityBody {
+export interface Social extends Body {
     _type: 'social';
     title: string;
     url: string;
