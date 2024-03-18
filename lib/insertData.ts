@@ -27,9 +27,9 @@ const pageInfoData = [
         _id: '01',
         name: 'Gabin Williams',
         role: 'Software Engineer II',
-        heroImage: '',
+        heroImage: '/path/to/image.jpg',
         backgroundInformation: `As a software engineer, I bring a combination of creativity, passion for problem-solving, and technical proficiency to my work. My continuous learning and focus on staying updated with latest technologies, enables me to deliver effective solutions. Besides coding, I enjoy outdoor activities that keep me active and connected with nature. I value building connections with like-minded individuals and am always open to making new friends over shared interests in technology and the outdoors. Let's connect and have a chat!`,
-        profileImage: '',
+        profileImage: '/path/to/image.jpg',
         phoneNumber: 'Your Phone Number',
         email: 'Your Email',
         address: 'Your Address',
@@ -40,17 +40,26 @@ const projectData = [
     {
         _id: '01',
         title: 'My Project',
-        image: 'url to photo',
+        image: '/path/to/image.jpg',
         summary: 'This is a summary of my project.',
         technologies: ['tech1', 'tech2', 'tech3'],
-        linkToBuild: 'https://www.example.com', // replace with your actual URL
+        linkToBuild: 'https://www.example.com',
     },
 ];
 
 const skillData = [
     {
+        _id: '01',
         title: 'JavaScript',
-        image: 'path to image',
+        image: '/path/to/image.jpg',
+    },
+];
+
+const socialData = [
+    {
+        _id: '01',
+        title: 'GitHub',
+        url: 'https://github.com/username',
     },
 ];
 
@@ -69,13 +78,10 @@ async function insertData(collectionName: string, dataArray: any[]) {
             const existingDocument = await collection.findOne(query);
 
             if (existingDocument) {
-                // Check if the existing document is different from the new data
                 if (JSON.stringify(existingDocument) !== JSON.stringify(data)) {
-                    // If it's different, replace the entire document
                     await collection.replaceOne(query, data);
                 }
             } else {
-                // If the document doesn't exist, insert a new one
                 await collection.insertOne(data);
             }
         }
@@ -87,3 +93,5 @@ async function insertData(collectionName: string, dataArray: any[]) {
 insertData('experience', experienceData);
 insertData('pageInfo', pageInfoData);
 insertData('projects', projectData);
+insertData('skills', skillData);
+insertData('social', socialData);

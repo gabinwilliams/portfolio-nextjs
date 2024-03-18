@@ -31,7 +31,7 @@ function About({ pageInfo }: Props) {
             >
                 <Image
                     className='mt-[50px] h-36 w-36 flex-shrink-0 rounded-full object-cover md:mt-0 md:mb-0 md:h-96 md:w-64 md:rounded-lg xl:mt-[200px] xl:h-[400px] xl:w-[400px]'
-                    src={urlFor(pageInfo?.profilePic).url()}
+                    src={pageInfo.profileImage || '/profile.jpg'}
                     width='600'
                     height='800'
                     alt={'Profile Picture'}

@@ -1,12 +1,14 @@
-import { Social } from '../typings';
+import axios from 'axios';
 
 export const fetchSocials = async () => {
-    const res = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/getSocials`
-    );
+    try {
+        const { data } = await axios.get(
+            `${process.env.NEXT_PUBLIC_BASE_URL}/api/getSocials`
+        );
 
-    const data = await res.json();
-    const socials: Social[] = data.socials;
-
-    return socials;
+        return data;
+    } catch (err) {
+        console.error('Failed to fetch socials:', err);
+        return null;
+    }
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Header from '../components/Header';
@@ -68,21 +68,25 @@ export default function Home({
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const pageInfo: PageInfo[] = await fetchPageInfo();
-    const experience: Experience[] = await fetchExperience();
-    const skills: Skill[] = await fetchSkills();
-    const projects: Project[] = await fetchProjects();
-    const socials: Social[] = await fetchSocials();
+    try {
+        const pageInfo = await fetchPageInfo();
+        const experience = await fetchExperience();
+        const skills = await fetchSkills();
+        const projects = await fetchProjects();
+        const socials = await fetchSocials();
 
-    return {
-        props: {
-            pageInfo,
-            experience,
-            skills,
-            projects,
-            socials,
-        },
-        // Use ISR instead of SSR because it's faster and caches the data and re-validates the cache every 30 seconds.
-        revalidate: 60,
-    };
+        return {
+            props: {
+                pageInfo,
+                experience,
+                skills,
+                projects,
+                socials,
+            },
+            revalidate: 60,
+        };
+    } catch (error) {
+        console.error('Error fetching data in getStaticProps:', error);
+        throw error;
+    }
 };
