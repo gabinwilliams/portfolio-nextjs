@@ -83,7 +83,7 @@ export const getStaticProps: GetStaticProps = async () => {
                 projects,
                 socials,
             },
-            revalidate: 60 * 60 * 24, // Revalidate once a day
+            revalidate: 60,
         };
     } catch (error) {
         console.error('Error fetching data in getStaticProps:', error);
