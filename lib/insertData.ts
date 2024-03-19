@@ -3,7 +3,7 @@ import connectToDatabase from './db';
 const experienceData = [
     {
         _id: '01',
-        jobTitle: 'Software Engine',
+        jobTitle: 'Software Engineer',
         companyName: 'Turnberry Solutions',
         companyImage: '/icons/github_icon.svg',
         companyBullets: [
