@@ -1,66 +1,44 @@
-interface Body {
-    _createdAt: string;
+export interface Experience {
     _id: string;
-    _rev: string;
-    _updatedAt: string;
-}
-
-// interface Image {
-//     url: any;
-//     _type: 'image';
-//     asset: {
-//         _ref: string;
-//         _type: 'reference';
-//     };
-// }
-
-export interface PageInfo extends Body {
-    _type: 'pageInfo';
-    address: string;
-    backgroundInformation: string;
-    email: string;
-    role: string;
-    heroImage: Image;
-    name: string;
-    phoneNumber: string;
-    profileImage: Image;
-}
-
-export interface Technology extends Body {
-    _type: 'skill';
-    image: Image;
-    title: string;
-}
-
-export interface Skill extends Body {
-    _type: 'skill';
-    image: Image;
-    title: string;
-}
-
-export interface Experience extends Body {
-    _type: 'experience';
-    companyBullets: string[];
-    companyImage: Image;
-    dateStarted: Date;
-    dateEnded: Date;
-    isCurrentlyWorkingHere: boolean;
     jobTitle: string;
     companyName: string;
-    points: string[];
-    technologies: Technology[];
+    companyImage: string;
+    companyBullets: string[];
+    dateStarted: string;
+    dateEnded: string;
+    isCurrentlyWorkingHere: boolean;
+    technologies: string[];
 }
 
-export interface Project extends Body {
-    _type: 'project';
-    image: Image;
-    linkToBuild: string;
+export interface PageInfo {
+    _id: string;
+    name: string;
+    role: string;
+    heroImage: string;
+    backgroundInformation: string;
+    profileImage: string;
+    phoneNumber: string;
+    email: string;
+    address: string;
+}
+
+export interface Project {
+    _id: string;
+    title: string;
+    image: string;
     summary: string;
-    technologies: Technology[];
+    technologies: string[];
+    linkToBuild: string;
 }
 
-export interface Social extends Body {
-    _type: 'social';
+export interface Skill {
+    _id: string;
+    title: string;
+    image: string;
+}
+
+export interface Social {
+    _id: string;
     title: string;
     url: string;
 }

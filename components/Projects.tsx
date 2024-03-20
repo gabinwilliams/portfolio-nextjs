@@ -48,7 +48,7 @@ function Projects({ projects }: Props) {
                                         <Image
                                             className='h-10 w-10 object-contain'
                                             key={index}
-                                            src={technology.image}
+                                            src={technology}
                                             alt={'tech icon'}
                                             width='50'
                                             height='50'
