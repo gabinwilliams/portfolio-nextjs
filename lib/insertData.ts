@@ -3,6 +3,32 @@ import connectToDatabase from './db';
 const experienceData = [
     {
         _id: '01',
+        jobTitle: 'Software Engineer II',
+        companyName: 'Principal Financial Group',
+        companyImage: '/icons/github_icon.svg',
+        companyBullets: [
+            `As one of two key contributors, successfully completed a high-priority, company-wide modernization project by migrating over 25 applications from Bitbucket/Bamboo to GitHub Actions, meeting critical deadlines.`,
+            `Single-handedly drove a pivotal business initiative by migrating 5 applications from Universal Analytics to Google Analytics 4, enhancing insight depth and data quality.`,
+            `Successfully migrated a key application, used by thousands of customers for accessing beneficiary claims forms, from Jenkins to GitHub Actions, significantly enhancing deployment efficiency and reliability without compromising user access.`,
+            `Contributed to a major modernization effort by rebuilding an outdated application with Next.js in AWS, transforming it into a more efficient and scalable Lambda application.`,
+            `Established AWS SNS topics to publish critical alerts and integrated with SQS queues, leveraging xMatters for automated notification to on-call engineers. Ensured alarms were correctly configured by thoroughly testing and selecting effective data points.`,
+        ],
+        dateStarted: '2023-03-15',
+        dateEnded: '',
+        isCurrentlyWorkingHere: true,
+        technologies: [
+            '/icons/react_icon.svg',
+            '/icons/react_icon.svg',
+            '/icons/react_icon.svg',
+            '/icons/react_icon.svg',
+            '/icons/react_icon.svg',
+            '/icons/react_icon.svg',
+            '/icons/react_icon.svg',
+            '/icons/react_icon.svg',
+        ],
+    },
+    {
+        _id: '02',
         jobTitle: 'Software Engineer',
         companyName: 'Turnberry Solutions',
         companyImage: '/icons/github_icon.svg',
@@ -18,18 +44,27 @@ const experienceData = [
         dateStarted: '2021-11-15',
         dateEnded: '2023-03-20',
         isCurrentlyWorkingHere: false,
-        technologies: ['public/icons/github_icon.svg', 'tech2'],
+        technologies: [
+            '/icons/react_icon.svg',
+            '/icons/react_icon.svg',
+            '/icons/react_icon.svg',
+            '/icons/react_icon.svg',
+            '/icons/react_icon.svg',
+            '/icons/react_icon.svg',
+            '/icons/react_icon.svg',
+            '/icons/react_icon.svg',
+        ],
     },
 ];
 
 const pageInfoData = [
     {
         _id: '01',
-        name: 'Gabin Williams',
+        name: 'Gabin',
         role: 'Software Engineer II',
-        heroImage: '/path/to/image.jpg',
+        heroImage: '/woods.JPG',
         backgroundInformation: `As a software engineer, I bring a combination of creativity, passion for problem-solving, and technical proficiency to my work. My continuous learning and focus on staying updated with latest technologies, enables me to deliver effective solutions. Besides coding, I enjoy outdoor activities that keep me active and connected with nature. I value building connections with like-minded individuals and am always open to making new friends over shared interests in technology and the outdoors. Let's connect and have a chat!`,
-        profileImage: '/path/to/image.jpg',
+        profileImage: '/water.JPG',
         phoneNumber: 'Your Phone Number',
         email: 'Your Email',
         address: 'Your Address',
@@ -51,7 +86,57 @@ const skillData = [
     {
         _id: '01',
         title: 'JavaScript',
-        image: '/path/to/image.jpg',
+        image: '/icons/react_icon.svg',
+    },
+    {
+        _id: '02',
+        title: 'JavaScript',
+        image: '/icons/react_icon.svg',
+    },
+    {
+        _id: '03',
+        title: 'JavaScript',
+        image: '/icons/react_icon.svg',
+    },
+    {
+        _id: '04',
+        title: 'JavaScript',
+        image: '/icons/react_icon.svg',
+    },
+    {
+        _id: '05',
+        title: 'JavaScript',
+        image: '/icons/react_icon.svg',
+    },
+    {
+        _id: '06',
+        title: 'JavaScript',
+        image: '/icons/react_icon.svg',
+    },
+    {
+        _id: '07',
+        title: 'JavaScript',
+        image: '/icons/react_icon.svg',
+    },
+    {
+        _id: '08',
+        title: 'JavaScript',
+        image: '/icons/react_icon.svg',
+    },
+    {
+        _id: '09',
+        title: 'JavaScript',
+        image: '/icons/react_icon.svg',
+    },
+    {
+        _id: '10',
+        title: 'JavaScript',
+        image: '/icons/react_icon.svg',
+    },
+    {
+        _id: '11',
+        title: 'JavaScript',
+        image: '/icons/react_icon.svg',
     },
 ];
 

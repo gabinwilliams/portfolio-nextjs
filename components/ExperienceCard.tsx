@@ -28,11 +28,11 @@ function ExperienceCard({ job }: Props) {
                 <h4 className='text-4xl font-light'>{job?.jobTitle}</h4>
                 <p className='mt-1 text-2xl font-bold'>{job?.companyName}</p>
                 <div className='my-2 flex flex-wrap'>
-                    {job?.technologies?.map((technology) => (
+                    {job?.technologies?.map((technology, index) => (
                         <Image
-                            key={technology._id}
+                            key={index}
                             className='m-1 h-10 w-10 object-contain'
-                            src={technology?.image}
+                            src={technology}
                             alt={'tech picture'}
                             width='100'
                             height='100'
@@ -46,8 +46,8 @@ function ExperienceCard({ job }: Props) {
                         : job?.dateEnded.toString()}
                 </p>
                 <ul className='ml-5 list-disc space-y-4 text-lg'>
-                    {job?.companyBullets?.map((bullet) => (
-                        <li key={bullet}>{bullet}</li>
+                    {job?.companyBullets?.map((bullet, index) => (
+                        <li key={index}>{bullet}</li>
                     ))}
                 </ul>
             </div>
