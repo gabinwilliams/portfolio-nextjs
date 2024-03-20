@@ -12,22 +12,26 @@ type Props = {
 function Hero({ pageInfo }: Props) {
     const [text, count] = useTypewriter({
         words: [
-            `Hi, the Name's ${pageInfo?.name}`,
-            'Coffee-mug-always-full.tsx',
-            '<ErrorEliminator />',
+            `Hi, I'm ${pageInfo?.name}`,
+            'CoffeeMugAlwaysFull.tsx',
+            '<Learning..... />',
         ],
         loop: true,
         delaySpeed: 2000,
     });
+
     return (
         <motion.div className='relative flex h-screen flex-col items-center justify-center space-y-8 overflow-hidden text-center'>
             <Image
                 className='mx-auto h-44 w-44 rounded-full object-cover'
                 alt={'profile image'}
+                placeholder='blur'
+                blurDataURL={pageInfo?.heroImage}
                 src={pageInfo?.heroImage}
+                priority={true}
                 width='200'
                 height='200'
-            ></Image>
+            />
             <div className='z-20'>
                 <h2 className='text-md pb-2 uppercase tracking-[10px] text-gray-500'>
                     {pageInfo?.role}
