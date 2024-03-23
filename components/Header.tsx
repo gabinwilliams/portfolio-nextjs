@@ -12,7 +12,7 @@ function Header({ socials }: Props) {
         window.location.href = `mailto:gabinwilliams@gmail.com`;
     };
     return (
-        <header className='sticky top-0 z-20 mx-auto flex max-w-7xl items-start justify-between bg-inherit p-5 xl:items-center'>
+        <header className='sticky top-0 z-20 mx-auto flex items-start justify-between bg-inherit p-5 xl:items-center'>
             <motion.div
                 initial={{
                     x: -500,
