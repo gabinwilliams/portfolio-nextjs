@@ -77,7 +77,16 @@ const projectData = [
         title: 'My Project',
         image: '/path/to/image.jpg',
         summary: 'This is a summary of my project.',
-        technologies: ['tech1', 'tech2', 'tech3'],
+        technologies: [
+            '/icons/react_icon.svg',
+            '/icons/react_icon.svg',
+            '/icons/react_icon.svg',
+            '/icons/react_icon.svg',
+            '/icons/react_icon.svg',
+            '/icons/react_icon.svg',
+            '/icons/react_icon.svg',
+            '/icons/react_icon.svg',
+        ],
         linkToBuild: 'https://www.example.com',
     },
 ];
